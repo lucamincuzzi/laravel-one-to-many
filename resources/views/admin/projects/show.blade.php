@@ -17,7 +17,7 @@
         {{-- /Messaggio di avvenuta aggiunta o modifica dell'elemento --}}
         
         <h2 class="mb-3 text-center">{{ $project->title }}</h2>
-        <p class="mb-3 text-center">{{ $project?->type()?->name ?? 'Nessuna categoria' }}</p>
+        <p class="mb-3 text-center">{{ $project->type?->name ?? 'Nessuna categoria' }}</p>
         <p>{{ $project->description }}</p>
         <a class="d-inline-block btn btn-warning" href="{{ route('admin.projects.edit', ["project" => $project->slug]) }}">Modifica</a>
         @include('admin.projects.partials.delete')

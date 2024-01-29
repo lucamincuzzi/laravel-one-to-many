@@ -25,6 +25,16 @@
                 <label for="title" class="form-label">Titolo</label>
                 <input type="text" class="form-control" id="title" name="title" value="{{ old('title') ?? $project->title }}">
             </div>
+
+            <div class="mb-3">
+                <label for="type_id"></label>
+                <select class="form-select" aria-label="Default select example" id="type_id" name="type_id">
+                    <option>Seleziona una categoria</option>
+                    <option @selected($project->type?->name === 'front-end') value="1">Front-end</option>
+                    <option @selected($project->type?->name === 'back-end') value="2">Back-end</option>
+                    <option @selected($project->type?->name === 'fullstack') value="3">Fullstack</option>
+                </select>
+            </div>
             
             <div class="mb-3">
                 <label for="description" class="form-label">Descrizione</label>

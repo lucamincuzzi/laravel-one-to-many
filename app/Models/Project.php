@@ -13,7 +13,7 @@ class Project extends Model
 
     use SoftDeletes;
 
-    protected $fillable = ['title', 'description'];
+    protected $fillable = ['title', 'description', 'type_id'];
 
     protected function setTitleAttribute($_title) {
         $this->attributes["title"] = $_title;
@@ -21,6 +21,6 @@ class Project extends Model
     }
 
     public function type() {
-        $this->hasOne(Type::class);
+        return $this->belongsTo(Type::class);
     }
 }
